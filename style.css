@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    font-weight: 300;
+}
+
+body{
+    font-size: 10px;
+    overflow-x: hidden;
+}
+
+/* HEADER MOBILE */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5% 8rem 5%;
+}
+
+.logo{
+    font-weight: 400;
+    font-size: 1.3rem;
+    align-items:center;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(250, 250, 170, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.8rem;
+    transform: translateX(100%);
+    list-style: none;
+}
+
+.menu.on {
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.menu.on .menu-link{
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.instagram{
+    cursor: pointer;
+}
+
+.hamburger{
+    margin-top: 1.5rem;
+    display: block;
+}
+
+.sub-menu{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   text-align: center;
+   height: 100vh;
+   width: 100vw;
+   position: absolute;
+   top: 0;
+   left: 0;
+   font-size: 1.4rem;
+   transform: translateX(100%);
+   list-style: none;
+}
+
+/* HEADER PC */
+
+@media only screen and (min-width: 800px) {
+    .menu{
+        position: unset;
+        background: inherit;
+        flex-direction: row;
+        width: max-content;
+        height: inherit;
+        align-items: center;
+        gap: 4rem;
+        font-size: 1.3rem;
+        transform: translateX(0);
+    }
+
+    .sub-menu{
+        position: unset;
+        background: inherit;
+        flex-direction: row;
+        font-size: 1rem;
+        width: max-content;
+        height: inherit;
+        align-items: center;
+        gap: 4rem;
+        transform: translateX(0);
+        color: rgb(70 70 70);
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .menu-link {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .menu-link::after{
+        content: '';
+        width: 0%;
+        height: 0.05rem;
+        background-color: black;
+        position: absolute;
+        left: 0;
+        bottom: -0.2rem;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .sub-menu .menu-link::after {
+        background-color: rgb(160 160 160);
+    }
+
+    .menu-link:hover::after{
+        width: 100%;
+    }
+
+    /*default*/
+    #personal-menu{
+        visibility:visible;
+    }
+
+    #commercial-menu{
+        visibility:hidden;
+    }
+
+
+    #personal-menu #personal.menu-link:hover::after {
+        visibility: visible
+    }
+    #commercial-menu #personal.menu-link:hover::after {
+        visibility: hidden
+    }
+
+
+    #personal-menu #commercial.menu-link:hover::after {
+        visibility: hidden
+    }
+    #commercial-menu #commercial.menu-link:hover::after {
+        visibility: visible
+    }
+}
+
+.logo {
+    position: relative;
+    cursor: pointer;
+}
+
+    .logo::after {
+        content: '';
+        width: 0%;
+        height: .1rem;
+        background-color: black;
+        position: absolute;
+        left: 0;
+        bottom: 1.5rem;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .logo:hover::after {
+        width: 100%;
+    }
+
+
+    /* CONTENT */
+
+    .box{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .photo{
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+    }
+
+    .photo img{
+        padding-bottom: 1.4%;
+
+    }
+
